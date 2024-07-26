@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/home/ui/widgets/main_brief.dart';
-import 'package:mario_osama/home/ui/widgets/main_social_actions.dart';
+import 'package:mario_osama/home/ui/widgets/main_social_actions_column.dart';
 
-class MainSection extends StatefulWidget {
-  const MainSection({
+class DesktopMainSection extends StatelessWidget {
+  const DesktopMainSection({
     super.key,
   });
 
   @override
-  State<MainSection> createState() => _MainSectionState();
-}
-
-class _MainSectionState extends State<MainSection> {
-  @override
   Widget build(BuildContext context) {
     return const Row(
       children: [
-        MainSocialActions(),
+        MainSocialActionsColumn(),
         Expanded(
           child: MainBrief(),
         ),

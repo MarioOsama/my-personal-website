@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/core/widgets/adaptive_layout.dart';
 import 'package:mario_osama/desktop_layout.dart';
+import 'package:mario_osama/tablet_layout.dart';
 
 class MarioOsama extends StatelessWidget {
   const MarioOsama({super.key});
@@ -11,9 +12,9 @@ class MarioOsama extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Mario Osama',
       home: AdaptiveLayout(
-        desktopLayout: (context) => DesktopLayout(),
-        mobileLayout: (context) => DesktopLayout(),
-        tabletLayout: (context) => DesktopLayout(),
+        desktopLayout: (context) => const DesktopLayout(),
+        tabletLayout: (context) => const TabletLayout(),
+        mobileLayout: (context) => const TabletLayout(),
       ),
     );
   }

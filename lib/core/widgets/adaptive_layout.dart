@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:mario_osama/core/utils/size_config.dart';
 
@@ -14,10 +16,13 @@ class AdaptiveLayout extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         if (constraints.maxWidth < SizeConfig.tablet) {
+          log('Mobile Layout');
           return mobileLayout(context);
         } else if (constraints.maxWidth < SizeConfig.desktop) {
+          log('Tablet Layout');
           return tabletLayout(context);
         } else {
+          log('Desktop Layout');
           return desktopLayout(context);
         }
       },

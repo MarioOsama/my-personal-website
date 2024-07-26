@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/core/theming/app_colors.dart';
 import 'package:mario_osama/home/ui/widgets/landing_screen_header.dart';
-import 'package:mario_osama/home/ui/widgets/main_section.dart';
+import 'package:mario_osama/home/ui/widgets/desktop_main_section.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeSection extends StatefulWidget {
+  const HomeSection({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomeSection> createState() => _HomeSectionState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
+class _HomeSectionState extends State<HomeSection>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<Offset> _animation;
@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen>
         const SizedBox(height: 120),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-          child: MainSection(),
+          child: DesktopMainSection(),
         ),
         Container(
           width: 20,
