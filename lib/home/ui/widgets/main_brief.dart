@@ -27,7 +27,7 @@ class MainBrief extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Text(
-            "A mobile app developer designing and building \nbeautiful and functional mobile apps for Android & iOS",
+            "Mobile app developer designing and building \nbeautiful and functional mobile apps for Android & iOS",
             textAlign: TextAlign.center,
             style: AppTextStyles.font14GreyBold.copyWith(
               letterSpacing: 1,

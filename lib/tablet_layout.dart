@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/core/theming/app_colors.dart';
-import 'package:mario_osama/home/ui/home_section.dart';
+import 'package:mario_osama/home/ui/tablet_home_section.dart';
 
-class DesktopLayout extends StatelessWidget {
-  const DesktopLayout({super.key});
+class TabletLayout extends StatelessWidget {
+  const TabletLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class DesktopLayout extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            HomeSection(),
+            TabletHomeSection(),
           ],
         ),
       ),

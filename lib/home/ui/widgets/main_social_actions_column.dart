@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/home/ui/widgets/social_action_item.dart';
 
-class MainSocialActions extends StatelessWidget {
-  const MainSocialActions({
+class MainSocialActionsColumn extends StatelessWidget {
+  const MainSocialActionsColumn({
     super.key,
   });
 
