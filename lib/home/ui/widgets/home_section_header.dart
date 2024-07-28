@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mario_osama/core/theming/app_text_styles.dart';
 import 'package:mario_osama/home/ui/widgets/header_action_item.dart';
 
-class LandingScreenHeader extends StatelessWidget {
-  const LandingScreenHeader({
+class HomeSectionHeader extends StatelessWidget {
+  const HomeSectionHeader({
     super.key,
   });
 

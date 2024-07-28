@@ -18,6 +18,7 @@ class MainBrief extends StatelessWidget {
         // const SizedBox(height: 20),
         Text(
           "HEY, I'M MARIO OSAMA",
+          textAlign: TextAlign.center,
           style: AppTextStyles.font48BlackBold.copyWith(
             letterSpacing: 2,
             wordSpacing: 3,
