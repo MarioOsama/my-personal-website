@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/core/theming/app_text_styles.dart';
+import 'package:mario_osama/core/utils/app_string.dart';
 
 class MainBrief extends StatelessWidget {
   const MainBrief({
@@ -17,9 +18,9 @@ class MainBrief extends StatelessWidget {
         // ),
         // const SizedBox(height: 20),
         Text(
-          "HEY, I'M MARIO OSAMA",
+          AppString.welcomeMessage,
           textAlign: TextAlign.center,
-          style: AppTextStyles.font48BlackBold.copyWith(
+          style: AppTextStyles.font48BlueBlackBold.copyWith(
             letterSpacing: 2,
             wordSpacing: 3,
           ),
@@ -28,7 +29,7 @@ class MainBrief extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Text(
-            "Mobile app developer designing and building \nbeautiful and functional mobile apps for Android & iOS",
+            AppString.briefMessage,
             textAlign: TextAlign.center,
             style: AppTextStyles.font14GreyBold.copyWith(
               letterSpacing: 1,
