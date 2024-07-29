@@ -29,7 +29,8 @@ class _AnimatedSkillItemState extends State<AnimatedSkillItem> {
       child: AnimatedScale(
         duration: const Duration(milliseconds: 300),
         scale: _isHovered ? 1.15 : 1,
-        child: Container(
+        child: AnimatedContainer(
+            duration: const Duration(milliseconds: 300),
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             width: 100,
             height: 100,
@@ -66,6 +67,14 @@ class _AnimatedSkillItemState extends State<AnimatedSkillItem> {
   BoxDecoration _buildDecoration() {
     return BoxDecoration(
       borderRadius: BorderRadius.circular(15),
+      boxShadow: [
+        if (_isHovered)
+          BoxShadow(
+            color: AppColors.purpleColor.withOpacity(0.5),
+            blurRadius: 15,
+            offset: const Offset(0, 0),
+          ),
+      ],
       color: AppColors.purpleColor.withOpacity(0.75),
     );
   }

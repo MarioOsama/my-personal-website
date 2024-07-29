@@ -50,7 +50,12 @@ class AppTextStyles {
         fontWeight: FontWeight.bold,
         color: AppColors.greyColor,
       );
-  static TextStyle get font16BlueBlackBold => const TextStyle(
+  static TextStyle get font16WhiteMedium => const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        color: AppColors.whiteColor,
+      );
+  static TextStyle get font16BlueBlackRegular => const TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.normal,
         color: AppColors.blueBlackColor,
