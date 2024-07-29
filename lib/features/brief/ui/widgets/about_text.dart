@@ -12,7 +12,10 @@ class AboutText extends StatelessWidget {
     return Text(
       AppString.aboutMessage,
       textAlign: TextAlign.justify,
-      style: AppTextStyles.font16GreyRegular.copyWith(),
+      style: AppTextStyles.font16GreyRegular.copyWith(
+        height: 1.5,
+        letterSpacing: 1,
+      ),
     );
   }
 }

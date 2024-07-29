@@ -13,7 +13,7 @@ class DesktopBriefSection extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: _buildDecoration(),
-      padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 80),
+      padding: const EdgeInsets.all(100),
       child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

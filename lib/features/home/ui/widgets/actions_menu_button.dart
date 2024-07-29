@@ -29,7 +29,7 @@ class ActionsMenuButton extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: Text(
                   "Home",
-                  style: AppTextStyles.font16BlueBlackBold,
+                  style: AppTextStyles.font16BlueBlackRegular,
                 )),
           ),
           PopupMenuItem(
@@ -38,7 +38,7 @@ class ActionsMenuButton extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: Text(
                   "About",
-                  style: AppTextStyles.font16BlueBlackBold,
+                  style: AppTextStyles.font16BlueBlackRegular,
                 )),
           ),
           PopupMenuItem(
@@ -47,7 +47,7 @@ class ActionsMenuButton extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: Text(
                   "Protfolio",
-                  style: AppTextStyles.font16BlueBlackBold,
+                  style: AppTextStyles.font16BlueBlackRegular,
                 )),
           )
         ];
