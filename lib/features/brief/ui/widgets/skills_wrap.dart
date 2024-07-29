@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/core/helpers/app_constant.dart';
-import 'package:mario_osama/features/brief/ui/widgets/animated_skill_item.dart';
+import 'package:mario_osama/features/brief/ui/widgets/skill_item.dart';
 
-class SkillsRow extends StatelessWidget {
-  const SkillsRow({
+class SkillsWrap extends StatelessWidget {
+  const SkillsWrap({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Wrap(
+      alignment: WrapAlignment.center,
+      spacing: 20,
+      runSpacing: 20,
       children: _getSkillItemsList(),
     );
   }
@@ -19,7 +21,7 @@ class SkillsRow extends StatelessWidget {
     final int length = AppConstant.skillsMap.keys.length;
     return List.generate(
       length,
-      (index) => AnimatedSkillItem(
+      (index) => SkillItem(
         skillName: AppConstant.skillsMap.keys.elementAt(index),
         imagePath: AppConstant.skillsMap.values.elementAt(index),
       ),

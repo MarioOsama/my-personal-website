@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mario_osama/features/about/ui/desktop_brief_section.dart';
+import 'package:mario_osama/features/brief/ui/desktop_brief_section.dart';
 import 'package:mario_osama/features/home/ui/desktop_home_section.dart';
 
 class DesktopLayout extends StatelessWidget {

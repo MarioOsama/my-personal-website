@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mario_osama/features/brief/ui/tablet_brief_section.dart';
 import 'package:mario_osama/features/home/ui/tablet_home_section.dart';
 
 class TabletLayout extends StatelessWidget {
@@ -10,6 +11,8 @@ class TabletLayout extends StatelessWidget {
       child: Column(
         children: [
           TabletHomeSection(),
+          SizedBox(height: 200),
+          BriefSection(),
         ],
       ),
     );
