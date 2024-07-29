@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mario_osama/home/ui/widgets/social_action_item.dart';
+import 'package:mario_osama/features/home/ui/widgets/social_action_item.dart';
 
 class MainSocialActionsColumn extends StatelessWidget {
   const MainSocialActionsColumn({

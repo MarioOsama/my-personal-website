@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/core/theming/app_text_styles.dart';
-import 'package:mario_osama/home/ui/widgets/header_action_item.dart';
+import 'package:mario_osama/core/utils/app_string.dart';
+import 'package:mario_osama/features/home/ui/widgets/header_action_item.dart';
 
 class HomeSectionHeader extends StatelessWidget {
   const HomeSectionHeader({
@@ -13,7 +14,7 @@ class HomeSectionHeader extends StatelessWidget {
       children: [
         Expanded(
           child: Text(
-            'Mario Osama',
+            AppString.myName,
             style: AppTextStyles.font32BlueBold,
           ),
         ),

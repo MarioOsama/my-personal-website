@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mario_osama/home/ui/widgets/home_section_header.dart';
-import 'package:mario_osama/home/ui/widgets/main_brief.dart';
-import 'package:mario_osama/home/ui/widgets/main_social_actions_row.dart';
-import 'package:mario_osama/home/ui/widgets/scroll_animation.dart';
+import 'package:mario_osama/features/home/ui/widgets/home_section_header.dart';
+import 'package:mario_osama/features/home/ui/widgets/main_brief.dart';
+import 'package:mario_osama/features/home/ui/widgets/main_social_actions_row.dart';
+import 'package:mario_osama/features/home/ui/widgets/scroll_animation.dart';
 
 class TabletHomeSection extends StatelessWidget {
   const TabletHomeSection({super.key});
