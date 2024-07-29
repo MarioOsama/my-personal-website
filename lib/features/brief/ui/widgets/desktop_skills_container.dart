@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/core/widgets/section_header.dart';
-import 'package:mario_osama/features/about/ui/widgets/skills_row.dart';
+import 'package:mario_osama/features/brief/ui/widgets/skills_row.dart';
 
-class SkillsContainer extends StatelessWidget {
-  const SkillsContainer({super.key});
+class DesktopSkillsContainer extends StatelessWidget {
+  const DesktopSkillsContainer({super.key});
 
   @override
   Widget build(BuildContext context) {

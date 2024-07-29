@@ -19,6 +19,7 @@ class _AnimatedSkillItemState extends State<AnimatedSkillItem> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      mouseCursor: MouseCursor.defer,
       onTap: () {},
       onHover: (value) {
         setState(() {
@@ -28,8 +29,7 @@ class _AnimatedSkillItemState extends State<AnimatedSkillItem> {
       child: AnimatedScale(
         duration: const Duration(milliseconds: 300),
         scale: _isHovered ? 1.15 : 1,
-        child: AnimatedContainer(
-            duration: const Duration(milliseconds: 300),
+        child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             width: 100,
             height: 100,
