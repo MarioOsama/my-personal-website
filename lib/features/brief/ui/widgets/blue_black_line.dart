@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/core/theming/app_colors.dart';
 
-class BlueLine extends StatelessWidget {
-  const BlueLine({
+class BlueBlackLine extends StatelessWidget {
+  const BlueBlackLine({
     super.key,
   });
 
@@ -15,7 +15,7 @@ class BlueLine extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         border: const Border(
           top: BorderSide(
-            color: AppColors.blueColor,
+            color: AppColors.blueBlackColor,
             width: 3,
           ),
         ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/features/brief/ui/widgets/about_text.dart';
-import 'package:mario_osama/features/brief/ui/widgets/blue_line.dart';
+import 'package:mario_osama/features/brief/ui/widgets/blue_black_line.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({
@@ -12,7 +12,7 @@ class AboutSection extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const BlueLine(),
+        const BlueBlackLine(),
         const SizedBox(width: 20),
         SizedBox(
           width: MediaQuery.sizeOf(context).width * 0.7,

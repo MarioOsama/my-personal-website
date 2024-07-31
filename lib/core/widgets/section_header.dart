@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mario_osama/core/theming/app_colors.dart';
 import 'package:mario_osama/core/theming/app_text_styles.dart';
 
 class SectionHeader extends StatelessWidget {
@@ -12,6 +13,8 @@ class SectionHeader extends StatelessWidget {
       sectionTitle,
       style: AppTextStyles.font36BlueExtraBold.copyWith(
         letterSpacing: 1.5,
+        wordSpacing: 2.5,
+        color: AppColors.blueBlackColor,
       ),
     );
   }

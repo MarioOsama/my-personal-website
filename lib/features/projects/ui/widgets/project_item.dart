@@ -1,83 +1,69 @@
 import 'package:flutter/material.dart';
-import 'package:mario_osama/core/theming/app_colors.dart';
-import 'package:mario_osama/core/theming/app_text_styles.dart';
+import 'package:mario_osama/features/projects/data/models/project_model.dart';
+import 'package:mario_osama/features/projects/ui/widgets/project_details.dart';
+import 'package:mario_osama/features/projects/ui/widgets/project_image.dart';
 
-class ProjectItem extends StatefulWidget {
+class ProjectItem extends StatelessWidget {
   const ProjectItem(
-      {super.key, required this.imageUrl, required this.description});
+      {super.key,
+      required this.project,
+      required this.reversed,
+      this.isFirst = false});
 
-  final String imageUrl;
-  final String description;
-
-  @override
-  State<ProjectItem> createState() => _ProjectItemState();
-}
-
-class _ProjectItemState extends State<ProjectItem> {
-  bool isHovered = false;
+  final ProjectModel project;
+  final bool reversed;
+  final bool isFirst;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
-      onHover: _onProjectHover,
-      child: Container(
-        width: 350,
-        height: 250,
-        decoration: _buildDecoration(),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(15),
-          child: _buildAnimatedSwitcher(),
-        ),
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: reversed ? _buildReversedProjectItem : _buildProjectItem,
+    );
+  }
+
+  List<Widget> get _buildProjectItem {
+    return [
+      Expanded(
+        child: _buildAlignedImage(),
+      ),
+      const SizedBox(width: 80),
+      Expanded(
+        child: _buildDetails(),
+      ),
+    ];
+  }
+
+  List<Widget> get _buildReversedProjectItem {
+    return [
+      Expanded(
+        child: _buildDetails(),
+      ),
+      const SizedBox(width: 80),
+      Expanded(
+        child: _buildAlignedImage(),
+      ),
+    ];
+  }
+
+  Padding _buildDetails() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: ProjectDetails(
+        title: project.title,
+        description: project.description,
+        tools: project.tools,
       ),
     );
   }
 
-  AnimatedSwitcher _buildAnimatedSwitcher() {
-    return AnimatedSwitcher(
-      duration: const Duration(milliseconds: 500),
-      transitionBuilder: _buildTransition,
-      child:
-          isHovered ? _buildProjectBriefContainer() : const SizedBox.shrink(),
-    );
-  }
-
-  void _onProjectHover(isHovered) {
-    setState(() {
-      this.isHovered = isHovered;
-    });
-  }
-
-  Widget _buildTransition(child, animation) {
-    return SlideTransition(
-      position: Tween<Offset>(
-        begin: const Offset(0, 1),
-        end: Offset.zero,
-      ).animate(animation),
-      child: child,
-    );
-  }
-
-  Container _buildProjectBriefContainer() {
-    return Container(
-      alignment: Alignment.center,
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-      color: AppColors.blueBlackColor.withOpacity(0.75),
-      child: Text(
-        widget.description,
-        textAlign: TextAlign.center,
-        style: AppTextStyles.font16WhiteMedium,
-      ),
-    );
-  }
-
-  _buildDecoration() {
-    return BoxDecoration(
-      borderRadius: BorderRadius.circular(15),
-      color: AppColors.whiteColor,
-      image: DecorationImage(
-        fit: BoxFit.cover,
-        image: NetworkImage(widget.imageUrl),
+  Align _buildAlignedImage() {
+    return Align(
+      alignment: reversed ? Alignment.center : Alignment.centerLeft,
+      child: ProjectImage(
+        imageUrl: project.imageUrl,
+        withHoverIndicator: isFirst,
       ),
     );
   }

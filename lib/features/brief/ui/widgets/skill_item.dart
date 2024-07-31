@@ -12,12 +12,13 @@ class SkillItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: const EdgeInsets.only(bottom: 15, top: 20),
         width: 100,
-        height: 100,
+        height: 125,
         alignment: Alignment.center,
         decoration: _buildDecoration(),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             _buildSkillImage(),
             const Spacer(),
@@ -35,18 +36,39 @@ class SkillItem extends StatelessWidget {
     );
   }
 
-  Image _buildSkillImage() {
-    return Image.asset(
-      imagePath,
+  _buildSkillImage() {
+    return Container(
       width: 50,
-      height: 50,
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        border: Border.all(
+          color: AppColors.lightestGreyColor.withOpacity(0.25),
+        ),
+        color: AppColors.whiteColor.withOpacity(0.25),
+      ),
+      child: Image.asset(
+        imagePath,
+        width: 30,
+        height: 30,
+      ),
     );
   }
 
   BoxDecoration _buildDecoration() {
     return BoxDecoration(
       borderRadius: BorderRadius.circular(15),
-      color: AppColors.purpleColor.withOpacity(0.75),
+      border: Border.all(
+        color: AppColors.lightestGreyColor,
+      ),
+      boxShadow: [
+        BoxShadow(
+          color: AppColors.blueBlackColor.withOpacity(0.2),
+          offset: const Offset(0, 0),
+          blurRadius: 10,
+        ),
+      ],
+      color: AppColors.blueBlackColor.withOpacity(0.8),
     );
   }
 }
