@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mario_osama/core/helpers/projects_alignment_enum.dart';
 import 'package:mario_osama/core/widgets/section_header.dart';
 import 'package:mario_osama/features/projects/ui/widgets/projects_column.dart';
 
@@ -13,7 +14,10 @@ class DesktopProjectsSection extends StatelessWidget {
         SizedBox(height: 60),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 100.0),
-          child: ProjectsColumn(),
+          child: ProjectsColumn(
+            hoverable: true,
+            alignment: ProjectsAlignment.horizontal,
+          ),
         ),
       ],
     );

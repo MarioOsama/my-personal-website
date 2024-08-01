@@ -5,7 +5,10 @@ import 'package:mario_osama/core/utils/app_string.dart';
 class MainBrief extends StatelessWidget {
   const MainBrief({
     super.key,
+    this.padding,
   });
+
+  final EdgeInsets? padding;
 
   @override
   Widget build(BuildContext context) {
@@ -17,17 +20,20 @@ class MainBrief extends StatelessWidget {
         //   scale: 3,
         // ),
         // const SizedBox(height: 20),
-        Text(
-          AppString.welcomeMessage,
-          textAlign: TextAlign.center,
-          style: AppTextStyles.font48BlueBlackBold.copyWith(
-            letterSpacing: 2,
-            wordSpacing: 3,
+        Padding(
+          padding: padding ?? const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Text(
+            AppString.welcomeMessage,
+            textAlign: TextAlign.center,
+            style: AppTextStyles.font48BlueBlackBold.copyWith(
+              letterSpacing: 2,
+              wordSpacing: 3,
+            ),
           ),
         ),
         const SizedBox(height: 20),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding: padding ?? const EdgeInsets.symmetric(horizontal: 8.0),
           child: Text(
             AppString.briefMessage,
             textAlign: TextAlign.center,

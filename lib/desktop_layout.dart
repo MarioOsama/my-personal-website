@@ -9,15 +9,17 @@ class DesktopLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.sizeOf(context).height;
+
     return SingleChildScrollView(
       child: Column(
         children: [
-          DesktopHomeSection(),
-          SizedBox(height: 260),
-          DesktopBriefSection(),
-          SizedBox(height: 100),
-          DesktopProjectsSection(),
-          SizedBox(height: 100),
+          const DesktopHomeSection(),
+          SizedBox(height: height * 0.2),
+          const DesktopBriefSection(),
+          SizedBox(height: height * 0.1),
+          const DesktopProjectsSection(),
+          SizedBox(height: height * 0.1),
         ],
       ),
     );

@@ -1,6 +1,14 @@
 import 'package:mario_osama/features/projects/data/models/project_model.dart';
 
 class AppConstant {
+  // Actions Bar
+  static const List<String> actionBarTitlesList = [
+    'Home',
+    'Brief',
+    'Projects',
+    'Contact',
+  ];
+
   // Profile
   static const Map<String, String> profileIconsMap = {
     'GitHub': 'assets/images/svg/github.svg',
@@ -61,33 +69,33 @@ class AppConstant {
   // Description for the projects
   static const String foodAppDescription =
       """Food Recipes App, application for food recipes to includes appropriate number of recipes to help user in preparing meals
-      - User can search for a recipe by its name.
-      - User can filter recipes by various filters like Gluten-free, Vegetarian, Vegan.
-      - User can add a recipe to his favorite list.
-      - User friendly interface.""";
+- User can search for a recipe by its name.
+- User can filter recipes by various filters like Gluten-free, Vegetarian, Vegan.
+- User can add a recipe to his favorite list.
+- User friendly interface.""";
   static const String weatherAppDescription =
       """Letting the user know the current weather condition of various regions, forecasted weather condition
-      - User can search for the weather condition of any city.
-      - Show weather condition and forecasted weather for the next 5 days.
-      - Show weather condition, temperature, humidity, wind speed, and pressure.
-      - With some animations to make the app more attractive.
-      - The app can be used in both Arabic and English.
-      - User friendly interface.""";
+- User can search for the weather condition of any city.
+- Show weather condition and forecasted weather for the next 5 days.
+- Show weather condition, temperature, humidity, wind speed, and pressure.
+- With some animations to make the app more attractive.
+- The app can be used in both Arabic and English.
+- User friendly interface.""";
   static const String moyiestAppDescription =
       """Money Manager App, Track money flow whether expenses or incomes.
-      - User can add or delete his expenses or incomes with attachment and some notes.
-      - User can add or delete custom categories.
-      - Give the user some statistics for his money flow.
-      - Provide high level of security by locking the app with PIN.
-      - The app can be used in both Arabic and English.
-      - User friendly interface.""";
+- User can add or delete his expenses or incomes with attachment and some notes.
+- User can add or delete custom categories.
+- Give the user some statistics for his money flow.
+- Provide high level of security by locking the app with PIN.
+- The app can be used in both Arabic and English.
+- User friendly interface.""";
   static const String petsAppDescription =
       """Pets App, The main goal of this application is getting pet adopted, and some another features like pet services, veterinary services, and pet accessories
-      - User can search for pets to adopt.
-      - User can add a pet to be adopted.
-      - User can add a pet to his favorite list.
-      - User can search for pet services, veterinary services, and pet accessories.
-      - User friendly interface.""";
+- User can search for pets to adopt.
+- User can add a pet to be adopted.
+- User can add a pet to his favorite list.
+- User can search for pet services, veterinary services, and pet accessories.
+- User friendly interface.""";
 
   // Github Urls for the projects
   static const String foodAppGithubUrl =

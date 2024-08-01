@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:mario_osama/core/helpers/projects_alignment_enum.dart';
 import 'package:mario_osama/features/projects/data/models/project_model.dart';
 import 'package:mario_osama/features/projects/ui/widgets/project_details.dart';
 import 'package:mario_osama/features/projects/ui/widgets/project_image.dart';
 
-class ProjectItem extends StatelessWidget {
-  const ProjectItem(
+class HorizontalProjectItem extends StatelessWidget {
+  const HorizontalProjectItem(
       {super.key,
       required this.project,
       required this.reversed,
-      this.isFirst = false});
+      this.hoverable = false});
 
   final ProjectModel project;
   final bool reversed;
-  final bool isFirst;
+  final bool hoverable;
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: reversed ? _buildReversedProjectItem : _buildProjectItem,
     );
@@ -32,6 +33,7 @@ class ProjectItem extends StatelessWidget {
       Expanded(
         child: _buildDetails(),
       ),
+      const SizedBox(width: 40),
     ];
   }
 
@@ -44,6 +46,7 @@ class ProjectItem extends StatelessWidget {
       Expanded(
         child: _buildAlignedImage(),
       ),
+      const SizedBox(width: 40),
     ];
   }
 
@@ -54,16 +57,17 @@ class ProjectItem extends StatelessWidget {
         title: project.title,
         description: project.description,
         tools: project.tools,
+        textAlignment: ProjectTextAlignment.left,
       ),
     );
   }
 
   Align _buildAlignedImage() {
     return Align(
-      alignment: reversed ? Alignment.center : Alignment.centerLeft,
+      alignment: reversed ? Alignment.centerRight : Alignment.centerLeft,
       child: ProjectImage(
         imageUrl: project.imageUrl,
-        withHoverIndicator: isFirst,
+        hoverable: hoverable,
       ),
     );
   }

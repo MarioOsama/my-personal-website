@@ -9,14 +9,15 @@ class DesktopHomeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    final double height = MediaQuery.sizeOf(context).height;
+    return Column(
       children: [
-        Padding(
+        const Padding(
           padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
           child: HomeSectionHeader(),
         ),
-        SizedBox(height: 150),
-        Padding(
+        SizedBox(height: height * 0.05),
+        const Padding(
           padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
           child: Row(
             children: [
@@ -28,7 +29,7 @@ class DesktopHomeSection extends StatelessWidget {
             ],
           ),
         ),
-        ScrollAnimation(),
+        const ScrollAnimation(),
       ],
     );
   }

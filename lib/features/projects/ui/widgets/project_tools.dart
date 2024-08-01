@@ -5,14 +5,16 @@ class ProjectTools extends StatelessWidget {
   const ProjectTools({
     super.key,
     required this.toolsList,
+    required this.alignment,
   });
 
   final List<String> toolsList;
+  final WrapAlignment alignment;
 
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      alignment: WrapAlignment.start,
+      alignment: alignment,
       spacing: 10,
       runSpacing: 10,
       children: _getToolsListItems,

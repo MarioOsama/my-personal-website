@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mario_osama/core/helpers/app_constant.dart';
 import 'package:mario_osama/core/theming/app_text_styles.dart';
 import 'package:mario_osama/core/utils/app_string.dart';
 import 'package:mario_osama/features/home/ui/widgets/header_action_item.dart';
@@ -18,23 +19,22 @@ class HomeSectionHeader extends StatelessWidget {
             style: AppTextStyles.font32BlueBold,
           ),
         ),
-        const Expanded(
+        Expanded(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              HeaderActionItem(
-                title: 'Home',
-              ),
-              HeaderActionItem(
-                title: 'About',
-              ),
-              HeaderActionItem(
-                title: 'Portfolio',
-              ),
-            ],
+            children: _getActionItemsList,
           ),
         ),
       ],
     );
+  }
+
+  List<Widget> get _getActionItemsList {
+    const List<String> titles = AppConstant.actionBarTitlesList;
+    return titles.map(
+      (title) {
+        return HeaderActionItem(title: title);
+      },
+    ).toList();
   }
 }

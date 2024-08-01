@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mario_osama/core/helpers/app_constant.dart';
 import 'package:mario_osama/core/theming/app_colors.dart';
 import 'package:mario_osama/core/theming/app_text_styles.dart';
 
@@ -10,7 +11,7 @@ class ActionsMenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
-      constraints: const BoxConstraints.expand(height: 150),
+      constraints: const BoxConstraints.expand(height: 200),
       elevation: 0,
       color: AppColors.whiteColor,
       icon: const Icon(
@@ -22,36 +23,26 @@ class ActionsMenuButton extends StatelessWidget {
         // your logic
       },
       itemBuilder: (BuildContext ctx) {
-        return [
-          PopupMenuItem(
-            value: '/home',
-            child: Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  "Home",
-                  style: AppTextStyles.font16BlueBlackRegular,
-                )),
-          ),
-          PopupMenuItem(
-            value: '/about',
-            child: Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  "About",
-                  style: AppTextStyles.font16BlueBlackRegular,
-                )),
-          ),
-          PopupMenuItem(
-            value: '/protfolio',
-            child: Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  "Protfolio",
-                  style: AppTextStyles.font16BlueBlackRegular,
-                )),
-          )
-        ];
+        return _getPopupItemsList;
       },
     );
+  }
+
+  List<PopupMenuItem<String>> get _getPopupItemsList {
+    const List<String> titles = AppConstant.actionBarTitlesList;
+    return titles.map(
+      (title) {
+        return PopupMenuItem(
+          value: title,
+          child: Align(
+            alignment: Alignment.centerRight,
+            child: Text(
+              title,
+              style: AppTextStyles.font16BlueBlackRegular,
+            ),
+          ),
+        );
+      },
+    ).toList();
   }
 }

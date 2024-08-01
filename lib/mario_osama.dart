@@ -12,6 +12,9 @@ class MarioOsama extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
       title: 'Mario Osama',
       home: Scaffold(
         backgroundColor: AppColors.whiteColor,
