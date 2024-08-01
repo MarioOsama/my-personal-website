@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mario_osama/core/theming/app_text_styles.dart';
-import 'package:mario_osama/core/utils/app_string.dart';
-import 'package:mario_osama/features/home/ui/widgets/actions_menu_button.dart';
 import 'package:mario_osama/features/home/ui/widgets/main_brief.dart';
 import 'package:mario_osama/features/home/ui/widgets/main_social_actions_row.dart';
+import 'package:mario_osama/features/home/ui/widgets/mobile_nav_bar.dart';
 import 'package:mario_osama/features/home/ui/widgets/scroll_animation.dart';
 
 class MobileHomeSection extends StatelessWidget {
@@ -13,27 +11,20 @@ class MobileHomeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                AppString.myName,
-                style: AppTextStyles.font32BlueBold,
-              ),
-              const ActionsMenuButton()
-            ],
-          ),
+          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+          child: MobileNavBar(),
         ),
-        const SizedBox(height: 120),
-        const MainBrief(),
-        const SizedBox(height: 60),
-        const MainSocialActionsRow(),
-        const SizedBox(height: 60),
-        const ScrollAnimation(),
+        SizedBox(height: 120),
+        MainBrief(
+          padding: EdgeInsets.symmetric(horizontal: 40),
+        ),
+        SizedBox(height: 60),
+        MainSocialActionsRow(),
+        SizedBox(height: 60),
+        ScrollAnimation(),
       ],
     );
   }

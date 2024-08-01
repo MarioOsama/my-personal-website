@@ -1,29 +1,55 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/core/theming/app_colors.dart';
+import 'package:mario_osama/features/projects/ui/widgets/link_button.dart';
 import 'package:mario_osama/features/projects/ui/widgets/links_slider.dart';
 
 class ProjectImage extends StatelessWidget {
   const ProjectImage(
-      {super.key, required this.imageUrl, required this.withHoverIndicator});
+      {super.key,
+      required this.imageUrl,
+      required this.hoverable,
+      this.width,
+      this.height});
   final String imageUrl;
-  final bool withHoverIndicator;
+  final bool hoverable;
+  final double? width;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.topRight,
       children: [
-        Container(
-          width: 500,
-          height: 300,
-          decoration: _buildDecoration(),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(15),
-            child: const LinksSlider(),
-          ),
-        ),
+        hoverable ? _buildHoverableImage() : _buildNonHoverableImage(),
+
         // if (withHoverIndicator) const AnimatedHoverIndicator(),
       ],
+    );
+  }
+
+  Container _buildHoverableImage() {
+    return Container(
+      width: width ?? 600,
+      height: height ?? 400,
+      decoration: _buildDecoration(),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(15),
+        child: LinksSlider(),
+      ),
+    );
+  }
+
+  Container _buildNonHoverableImage() {
+    return Container(
+      width: width ?? 500,
+      height: height ?? 300,
+      decoration: _buildDecoration(),
+      child: Align(
+        alignment: Alignment.topRight,
+        child: LinkButton.icon(
+          imagePath: 'assets/images/png/github.png',
+        ),
+      ),
     );
   }
 
