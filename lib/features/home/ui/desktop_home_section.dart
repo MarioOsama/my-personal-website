@@ -16,7 +16,7 @@ class DesktopHomeSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
           child: HomeSectionHeader(),
         ),
-        SizedBox(height: height * 0.05),
+        SizedBox(height: height * 0.1),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
           child: Row(

@@ -14,7 +14,7 @@ class SkillItem extends StatelessWidget {
     return Container(
         padding: const EdgeInsets.only(bottom: 15, top: 20),
         width: 100,
-        height: 125,
+        height: 135,
         alignment: Alignment.center,
         decoration: _buildDecoration(),
         child: Column(
@@ -30,22 +30,21 @@ class SkillItem extends StatelessWidget {
   FittedBox _buildSkillName() {
     return FittedBox(
       fit: BoxFit.scaleDown,
-      child: Text(skillName,
-          style: AppTextStyles.font16GreyRegular
-              .copyWith(color: AppColors.whiteColor)),
+      child: Text(skillName, style: AppTextStyles.font16GreyRegular),
     );
   }
 
   _buildSkillImage() {
     return Container(
-      width: 50,
+      width: 60,
+      height: 60,
       padding: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         border: Border.all(
-          color: AppColors.lightestGreyColor.withOpacity(0.25),
+          color: AppColors.blueBlackColor.withOpacity(0.5),
         ),
-        color: AppColors.whiteColor.withOpacity(0.25),
+        color: AppColors.blueBlackColor.withOpacity(0.05),
       ),
       child: Image.asset(
         imagePath,
@@ -61,14 +60,6 @@ class SkillItem extends StatelessWidget {
       border: Border.all(
         color: AppColors.lightestGreyColor,
       ),
-      boxShadow: [
-        BoxShadow(
-          color: AppColors.blueBlackColor.withOpacity(0.2),
-          offset: const Offset(0, 0),
-          blurRadius: 10,
-        ),
-      ],
-      color: AppColors.blueBlackColor.withOpacity(0.8),
     );
   }
 }

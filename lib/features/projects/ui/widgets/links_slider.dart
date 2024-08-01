@@ -9,6 +9,7 @@ class LinksSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
+      mouseCursor: SystemMouseCursors.basic,
       onHover: _onHover,
       child: ValueListenableBuilder(
         valueListenable: _isHoveredNotifier,

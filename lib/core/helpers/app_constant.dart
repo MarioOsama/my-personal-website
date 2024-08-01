@@ -13,7 +13,6 @@ class AppConstant {
   static const Map<String, String> profileIconsMap = {
     'GitHub': 'assets/images/svg/github.svg',
     'LinkedIn': 'assets/images/svg/linkedin.svg',
-    'Gmail': 'assets/images/svg/gmail.svg',
     'Resume': 'assets/images/svg/resume.svg',
   };
 
@@ -140,4 +139,14 @@ class AppConstant {
     'Animations',
     'Responsive UI',
   ];
+
+  // Contact
+  static const contactMessage =
+      "I'm always on the lookout for exciting projects and new connections. Whether you're looking for a Flutter developer, need some tech advice, or just want to connect, I'd love to hear from you. Send me a message, and let's start the conversation.";
+  static const emialAddress = 'marioosamafayez@gmail.com';
+  static const phoneNumber = '01221826469';
+  static const Map<String, String> contactsMap = {
+    emialAddress: 'assets/images/svg/gmail.svg',
+    phoneNumber: 'assets/images/svg/whatsapp.svg',
+  };
 }

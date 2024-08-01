@@ -20,9 +20,27 @@ class AppTextStyles {
         color: AppColors.blueColor,
         fontFamily: 'Outfit',
       );
+  static TextStyle get font28BlueExtraBold => const TextStyle(
+        fontSize: 28,
+        fontWeight: FontWeight.w800,
+        color: AppColors.blueBlackColor,
+        fontFamily: 'Outfit',
+      );
   static TextStyle get font24BlueBlackExtraBold => const TextStyle(
         fontSize: 24,
         fontWeight: FontWeight.w800,
+        color: AppColors.blueBlackColor,
+        fontFamily: 'Outfit',
+      );
+  static TextStyle get font20BlueBlackSemiBold => const TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+        color: AppColors.blueBlackColor,
+        fontFamily: 'Outfit',
+      );
+  static TextStyle get font18BlueBlackBold => const TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w700,
         color: AppColors.blueBlackColor,
         fontFamily: 'Outfit',
       );
