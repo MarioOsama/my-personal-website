@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mario_osama/core/theming/app_colors.dart';
 import 'package:mario_osama/core/widgets/section_header.dart';
-import 'package:mario_osama/features/contact/ui/widgets/contact_details_column.dart';
+import 'package:mario_osama/features/contact/ui/contact_section_container.dart';
+import 'package:mario_osama/features/contact/ui/widgets/desktop_contact_details_column.dart';
 import 'package:mario_osama/features/contact/ui/widgets/contact_form_container.dart';
 
 class DesktopContactSection extends StatelessWidget {
@@ -9,10 +9,9 @@ class DesktopContactSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: _buildDecoration(),
-      padding: const EdgeInsets.all(100),
+    final double screenWidth = MediaQuery.sizeOf(context).width;
+    return ContactSectionContainer(
+      paddingValue: screenWidth < 1400 ? 50 : 100,
       child: const Column(
         children: [
           SectionHeader(sectionTitle: 'Contact Me'),
@@ -20,7 +19,7 @@ class DesktopContactSection extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: ContactDetailsColumn(),
+                child: DesktopContactDetailsColumn(),
               ),
               SizedBox(width: 100),
               Expanded(
@@ -31,32 +30,6 @@ class DesktopContactSection extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  DecorationImage _buildDecorationImage() {
-    return const DecorationImage(
-      image: AssetImage('assets/images/png/bg.png'),
-      fit: BoxFit.cover,
-      opacity: 0.05,
-    );
-  }
-
-  BoxDecoration _buildDecoration() {
-    return BoxDecoration(
-      image: _buildDecorationImage(),
-      gradient: _setGradient(),
-    );
-  }
-
-  LinearGradient _setGradient() {
-    return const LinearGradient(
-      colors: [
-        AppColors.whiteColor,
-        AppColors.lightestGreyColor,
-      ],
-      begin: Alignment.topCenter,
-      end: Alignment.bottomCenter,
     );
   }
 }

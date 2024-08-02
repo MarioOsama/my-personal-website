@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/features/brief/ui/tablet_brief_section.dart';
+import 'package:mario_osama/features/contact/ui/contact_section.dart';
 import 'package:mario_osama/features/home/ui/tablet_home_section.dart';
 import 'package:mario_osama/features/projects/ui/projects_section.dart';
 
@@ -17,6 +18,7 @@ class TabletLayout extends StatelessWidget {
           SizedBox(height: 100),
           ProjectsSection(),
           SizedBox(height: 100),
+          ContactSection(),
         ],
       ),
     );
