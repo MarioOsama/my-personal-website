@@ -22,7 +22,7 @@ class ProjectToolItem extends StatelessWidget {
       ),
       child: Text(
         toolName,
-        style: AppTextStyles.font16WhiteMedium
+        style: AppTextStyles.font16WhiteMedium(context)
             .copyWith(color: AppColors.greyColor),
       ),
     );

@@ -16,7 +16,7 @@ class HomeSectionHeader extends StatelessWidget {
         Expanded(
           child: Text(
             AppString.myName,
-            style: AppTextStyles.font32BlueBold,
+            style: AppTextStyles.font32BlueBold(context),
           ),
         ),
         Expanded(

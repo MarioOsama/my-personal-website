@@ -13,7 +13,7 @@ class ContactMessage extends StatelessWidget {
     return Text(
       AppConstant.contactMessage,
       textAlign: textAlign,
-      style: AppTextStyles.font16GreyRegular.copyWith(
+      style: AppTextStyles.font16GreyRegular(context).copyWith(
         height: 1.5,
         letterSpacing: 1,
         fontWeight: FontWeight.w500,

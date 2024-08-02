@@ -14,14 +14,14 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      decoration: _buildInputDecoration(),
+      decoration: _buildInputDecoration(context),
       maxLines: maxLines,
     );
   }
 
-  InputDecoration _buildInputDecoration() {
+  InputDecoration _buildInputDecoration(BuildContext context) {
     return InputDecoration(
-      labelStyle: _getTextStyle,
+      labelStyle: _getTextStyle(context),
       filled: true,
       fillColor: AppColors.blueBlackColor.withOpacity(0.05),
       border: const OutlineInputBorder(),
@@ -30,8 +30,9 @@ class CustomTextFormField extends StatelessWidget {
     );
   }
 
-  get _getTextStyle => AppTextStyles.font18BlueBlackBold
-      .copyWith(color: AppColors.blueBlackColor.withOpacity(0.75));
+  _getTextStyle(BuildContext context) =>
+      AppTextStyles.font18BlueBlackBold(context)
+          .copyWith(color: AppColors.blueBlackColor.withOpacity(0.75));
 
   OutlineInputBorder _buildBorder() {
     return OutlineInputBorder(

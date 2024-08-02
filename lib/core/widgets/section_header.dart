@@ -11,7 +11,7 @@ class SectionHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       sectionTitle,
-      style: AppTextStyles.font36BlueExtraBold.copyWith(
+      style: AppTextStyles.font36BlueExtraBold(context).copyWith(
         letterSpacing: 1.5,
         wordSpacing: 2.5,
         color: AppColors.blueBlackColor,
