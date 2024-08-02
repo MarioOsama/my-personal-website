@@ -9,18 +9,16 @@ class TabletLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
-        children: [
-          TabletHomeSection(),
-          SizedBox(height: 200),
-          BriefSection(),
-          SizedBox(height: 100),
-          ProjectsSection(),
-          SizedBox(height: 100),
-          ContactSection(),
-        ],
-      ),
+    return const Column(
+      children: [
+        TabletHomeSection(),
+        SizedBox(height: 200),
+        BriefSection(),
+        SizedBox(height: 100),
+        ProjectsSection(),
+        SizedBox(height: 100),
+        ContactSection(),
+      ],
     );
   }
 }
