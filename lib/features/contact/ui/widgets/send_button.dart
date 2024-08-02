@@ -11,7 +11,7 @@ class SendButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        fixedSize: const Size(635, 50),
+        minimumSize: const Size(double.infinity, 50),
         backgroundColor: AppColors.blueBlackColor,
         padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
         shape: RoundedRectangleBorder(
