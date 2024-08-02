@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mario_osama/core/cubit/scrolling_cubit.dart';
 import 'package:mario_osama/core/helpers/app_constant.dart';
 import 'package:mario_osama/core/theming/app_colors.dart';
 import 'package:mario_osama/core/theming/app_text_styles.dart';
@@ -20,7 +22,7 @@ class ActionsMenuButton extends StatelessWidget {
       iconSize: 30,
       iconColor: AppColors.greyColor,
       onSelected: (value) {
-        // your logic
+        context.read<ScrollingCubit>().scrollToTargetedSection(context, value);
       },
       itemBuilder: (BuildContext ctx) {
         return _getPopupItemsList(ctx);

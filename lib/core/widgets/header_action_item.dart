@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mario_osama/core/cubit/scrolling_cubit.dart';
 import 'package:mario_osama/core/theming/app_text_styles.dart';
 
 class HeaderActionItem extends StatelessWidget {
@@ -11,6 +13,7 @@ class HeaderActionItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         print('$title Tapped');
+        context.read<ScrollingCubit>().scrollToTargetedSection(context, title);
       },
       child: Text(
         title,
