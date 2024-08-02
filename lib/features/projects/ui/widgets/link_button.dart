@@ -34,7 +34,7 @@ class LinkButton extends StatelessWidget {
         }
       },
       style: _buildButtonStyle(),
-      child: title != null ? _buildButton() : _buildIconButton(),
+      child: title != null ? _buildButton(context) : _buildIconButton(),
     );
   }
 
@@ -47,7 +47,7 @@ class LinkButton extends StatelessWidget {
     );
   }
 
-  Row _buildButton() {
+  Row _buildButton(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -55,7 +55,7 @@ class LinkButton extends StatelessWidget {
         const SizedBox(width: 10),
         Text(
           title!,
-          style: AppTextStyles.font16WhiteMedium,
+          style: AppTextStyles.font16WhiteMedium(context),
         ),
       ],
     );

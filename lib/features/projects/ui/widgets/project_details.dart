@@ -24,15 +24,15 @@ class ProjectDetails extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppTextStyles.font24BlueBlackExtraBold
+          style: AppTextStyles.font24BlueBlackExtraBold(context)
               .copyWith(letterSpacing: 1, wordSpacing: 2),
         ),
         const SizedBox(height: 10),
         Column(
           crossAxisAlignment: _getAlignment,
           children: textAlignment == ProjectTextAlignment.left
-              ? _buildLeftedDescription
-              : _buildCenteredDescription,
+              ? _buildLeftedDescription(context)
+              : _buildCenteredDescription(context),
         ),
         const SizedBox(height: 20),
         ProjectTools(toolsList: tools, alignment: _getWrapAlignment),
@@ -60,23 +60,23 @@ class ProjectDetails extends StatelessWidget {
     }
   }
 
-  List<Widget> get _buildLeftedDescription {
+  List<Widget> _buildLeftedDescription(BuildContext context) {
     return description
         .split('\n')
         .map((line) => Text(
               line,
-              style: AppTextStyles.font14GreyBold,
+              style: AppTextStyles.font14GreyBold(context),
             ))
         .toList();
   }
 
-  List<Widget> get _buildCenteredDescription {
+  List<Widget> _buildCenteredDescription(BuildContext context) {
     return description
         .split('\n- ')
         .map((line) => Text(
               line,
               textAlign: TextAlign.center,
-              style: AppTextStyles.font14GreyBold,
+              style: AppTextStyles.font14GreyBold(context),
             ))
         .toList();
   }

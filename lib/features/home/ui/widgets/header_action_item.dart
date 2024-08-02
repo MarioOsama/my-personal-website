@@ -14,7 +14,7 @@ class HeaderActionItem extends StatelessWidget {
       },
       child: Text(
         title,
-        style: AppTextStyles.font18BlueBlackSemiBold,
+        style: AppTextStyles.font18BlueBlackSemiBold(context),
       ),
     );
   }

@@ -23,12 +23,12 @@ class ActionsMenuButton extends StatelessWidget {
         // your logic
       },
       itemBuilder: (BuildContext ctx) {
-        return _getPopupItemsList;
+        return _getPopupItemsList(ctx);
       },
     );
   }
 
-  List<PopupMenuItem<String>> get _getPopupItemsList {
+  List<PopupMenuItem<String>> _getPopupItemsList(BuildContext context) {
     const List<String> titles = AppConstant.actionBarTitlesList;
     return titles.map(
       (title) {
@@ -38,7 +38,7 @@ class ActionsMenuButton extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: Text(
               title,
-              style: AppTextStyles.font16BlueBlackRegular,
+              style: AppTextStyles.font16BlueBlackRegular(context),
             ),
           ),
         );

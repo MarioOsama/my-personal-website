@@ -10,7 +10,6 @@ class ContactFormContainer extends StatelessWidget {
     final double width = MediaQuery.sizeOf(context).width;
 
     return Container(
-      height: 500,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: AppColors.blueBlackColor.withOpacity(0.05),

@@ -15,7 +15,7 @@ class MobileNavBar extends StatelessWidget {
       children: [
         Text(
           AppString.myName,
-          style: AppTextStyles.font32BlueBold,
+          style: AppTextStyles.font32BlueBold(context),
         ),
         const ActionsMenuButton()
       ],

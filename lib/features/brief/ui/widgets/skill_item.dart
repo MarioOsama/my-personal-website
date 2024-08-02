@@ -22,15 +22,15 @@ class SkillItem extends StatelessWidget {
           children: [
             _buildSkillImage(),
             const Spacer(),
-            _buildSkillName(),
+            _buildSkillName(context),
           ],
         ));
   }
 
-  FittedBox _buildSkillName() {
+  FittedBox _buildSkillName(BuildContext context) {
     return FittedBox(
       fit: BoxFit.scaleDown,
-      child: Text(skillName, style: AppTextStyles.font16GreyRegular),
+      child: Text(skillName, style: AppTextStyles.font16GreyRegular(context)),
     );
   }
 

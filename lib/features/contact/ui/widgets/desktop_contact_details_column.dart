@@ -11,7 +11,8 @@ class DesktopContactDetailsColumn extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Let\'s Connect', style: AppTextStyles.font28BlueExtraBold),
+        Text('Let\'s Connect',
+            style: AppTextStyles.font28BlueExtraBold(context)),
         const SizedBox(height: 20),
         const ContactMessage(
           textAlign: TextAlign.start,

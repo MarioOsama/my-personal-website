@@ -13,6 +13,7 @@ class TabletHomeSection extends StatelessWidget {
   Widget build(BuildContext context) {
     const double menuBarBreakpoint = SizeConfig.mobileMenuItemsBreakpoint;
     final double width = MediaQuery.sizeOf(context).width;
+    final double height = MediaQuery.sizeOf(context).height;
 
     return Column(
       children: [
@@ -22,7 +23,7 @@ class TabletHomeSection extends StatelessWidget {
               ? const MobileNavBar()
               : const HomeSectionHeader(),
         ),
-        const SizedBox(height: 120),
+        SizedBox(height: height * 0.25),
         const MainBrief(),
         const SizedBox(height: 60),
         const MainSocialActionsRow(),

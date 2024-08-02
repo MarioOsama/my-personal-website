@@ -25,7 +25,7 @@ class MainBrief extends StatelessWidget {
           child: Text(
             AppString.welcomeMessage,
             textAlign: TextAlign.center,
-            style: AppTextStyles.font48BlueBlackBold.copyWith(
+            style: AppTextStyles.font48BlueBlackBold(context).copyWith(
               letterSpacing: 2,
               wordSpacing: 3,
             ),
@@ -37,7 +37,7 @@ class MainBrief extends StatelessWidget {
           child: Text(
             AppString.briefMessage,
             textAlign: TextAlign.center,
-            style: AppTextStyles.font14GreyBold.copyWith(
+            style: AppTextStyles.font14GreyBold(context).copyWith(
               letterSpacing: 1,
               wordSpacing: 3,
             ),

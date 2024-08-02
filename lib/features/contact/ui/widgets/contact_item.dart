@@ -22,7 +22,7 @@ class ContactItem extends StatelessWidget {
         const SizedBox(width: 20),
         SelectableText(
           title,
-          style: AppTextStyles.font20BlueBlackSemiBold.copyWith(
+          style: AppTextStyles.font20BlueBlackSemiBold(context).copyWith(
             letterSpacing: 1.5,
           ),
         ),

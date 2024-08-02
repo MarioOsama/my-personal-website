@@ -21,7 +21,7 @@ class SendButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         'Send',
-        style: AppTextStyles.font18BlueBlackBold
+        style: AppTextStyles.font18BlueBlackBold(context)
             .copyWith(color: AppColors.whiteColor),
       ),
     );
