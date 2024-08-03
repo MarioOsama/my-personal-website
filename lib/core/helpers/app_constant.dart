@@ -1,6 +1,9 @@
 import 'package:mario_osama/features/projects/data/models/project_model.dart';
 
 class AppConstant {
+  // Logo
+  static const String logoAssetName = 'assets/images/svg/logo.svg';
+
   // Actions Bar
   static const List<String> actionBarTitlesList = [
     'Home',

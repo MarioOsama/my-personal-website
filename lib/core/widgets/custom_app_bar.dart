@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mario_osama/core/helpers/app_constant.dart';
 import 'package:mario_osama/core/theming/app_colors.dart';
 import 'package:mario_osama/core/theming/app_text_styles.dart';
@@ -15,13 +16,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     final double width = MediaQuery.of(context).size.width;
     return AppBar(
       toolbarHeight: width < SizeConfig.tablet ? 60 : 80,
-      titleSpacing: 50,
+      titleSpacing: 30,
       elevation: 0,
       backgroundColor: AppColors.whiteColor,
       surfaceTintColor: AppColors.blueBlackColor,
-      title: Text(
-        AppString.myName,
-        style: AppTextStyles.font32BlueBold(context),
+      title: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: SvgPicture.asset(
+          AppConstant.logoAssetName,
+          height: 50,
+        ),
       ),
       actions: _getActionItemsList(context, width),
     );
