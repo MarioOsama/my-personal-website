@@ -21,7 +21,8 @@ class MainSocialActionsRow extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: SocialActionItem(
           title: AppConstant.profileIconsMap.keys.elementAt(index),
-          icon: AppConstant.profileIconsMap.values.elementAt(index),
+          icon: AppConstant.profileIconsMap.values.elementAt(index)['icon']!,
+          url: AppConstant.profileIconsMap.values.elementAt(index)['url']!,
         ),
       );
     });

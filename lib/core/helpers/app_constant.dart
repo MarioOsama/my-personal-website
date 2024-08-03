@@ -10,10 +10,24 @@ class AppConstant {
   ];
 
   // Profile
-  static const Map<String, String> profileIconsMap = {
-    'GitHub': 'assets/images/svg/github.svg',
-    'LinkedIn': 'assets/images/svg/linkedin.svg',
-    'Resume': 'assets/images/svg/resume.svg',
+  static const Map<String, Map<String, String>> profileIconsMap = {
+    'GitHub': {
+      'icon': 'assets/images/svg/github.svg',
+      'url': 'https://github.com/MarioOsama'
+    },
+    'LinkedIn': {
+      'icon': 'assets/images/svg/linkedin.svg',
+      'url': 'https://www.linkedin.com/in/mario-osama-fayez/'
+    },
+    'Gmail': {
+      'icon': 'assets/images/svg/gmail.svg',
+      'url': 'mailto:marioosamafayez@gmail.com'
+    },
+    'Resume': {
+      'icon': 'assets/images/svg/resume.svg',
+      'url':
+          'https://drive.google.com/file/d/1oWhkwTn0te9GoaorVSO6L9WutqTLnGZA/view?usp=sharing'
+    },
   };
 
   // Skills

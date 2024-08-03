@@ -65,6 +65,4 @@ class ScrollingCubit extends Cubit<ScrollController> {
       curve: Curves.easeInOut,
     );
   }
-
-  double _getProjectsPosition(double) => SizeConfig.tablet < 1200 ? 1765 : 1500;
 }
