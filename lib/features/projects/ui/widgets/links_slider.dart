@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:mario_osama/features/projects/ui/widgets/project_links_container.dart';
 
 class LinksSlider extends StatelessWidget {
-  LinksSlider({super.key});
+  LinksSlider({super.key, required this.links});
   final ValueNotifier<bool> _isHoveredNotifier = ValueNotifier<bool>(false);
+
+  final Map<String, String> links;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,9 @@ class LinksSlider extends StatelessWidget {
       onHover: _onHover,
       child: ValueListenableBuilder(
         valueListenable: _isHoveredNotifier,
-        child: const ProjectLinksContainer(),
+        child: ProjectLinksContainer(
+          links: links,
+        ),
         builder: (context, value, child) => AnimatedSwitcher(
           duration: const Duration(milliseconds: 1000),
           reverseDuration: const Duration(milliseconds: 500),

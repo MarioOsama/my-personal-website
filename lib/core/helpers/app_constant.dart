@@ -50,28 +50,28 @@ class AppConstant {
       title: 'Moyiest App',
       imageUrl: moyiestAppImageUrl,
       description: moyiestAppDescription,
-      githubUrl: moyiestAppGithubUrl,
+      links: {'github': moyiestAppGithubUrl},
       tools: moyiestAppTools,
     ),
     ProjectModel(
       title: 'Weather App',
       imageUrl: weatherAppImageUrl,
       description: weatherAppDescription,
-      githubUrl: weatherAppGithubUrl,
+      links: {'github': weatherAppGithubUrl},
       tools: weatherAppTools,
     ),
     ProjectModel(
       title: 'Pets App',
       imageUrl: petsAppImageUrl,
       description: petsAppDescription,
-      githubUrl: petsAppGithubUrl,
+      links: {'github': petsAppGithubUrl},
       tools: petsAppTools,
     ),
     ProjectModel(
       title: 'Food App',
       imageUrl: foodAppImageUrl,
       description: foodAppDescription,
-      githubUrl: foodAppGithubUrl,
+      links: {'github': foodAppGithubUrl},
       tools: foodAppTools,
     ),
   ];
@@ -166,4 +166,5 @@ class AppConstant {
     emialAddress: 'assets/images/svg/gmail.svg',
     phoneNumber: 'assets/images/svg/whatsapp.svg',
   };
+  static const myEmail = 'marioosamafayez@gmail.com';
 }

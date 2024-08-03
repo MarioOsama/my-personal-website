@@ -5,7 +5,7 @@ import 'package:mario_osama/mario_osama.dart';
 
 void main() {
   runApp(BlocProvider<ScrollingCubit>(
-    create: (context) => ScrollingCubit()..setupListener(),
+    create: (context) => ScrollingCubit(),
     child: const MarioOsama(),
   ));
 }

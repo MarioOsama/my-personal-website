@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/core/theming/app_colors.dart';
-import 'package:mario_osama/features/projects/ui/widgets/link_button.dart';
 import 'package:mario_osama/features/projects/ui/widgets/links_slider.dart';
+import 'package:mario_osama/features/projects/ui/widgets/projects_links_row.dart';
 
 class ProjectImage extends StatelessWidget {
-  const ProjectImage(
-      {super.key,
-      required this.imageUrl,
-      required this.hoverable,
-      this.width,
-      this.height});
+  const ProjectImage({
+    super.key,
+    required this.imageUrl,
+    required this.hoverable,
+    this.width,
+    this.height,
+    required this.links,
+  });
   final String imageUrl;
+  final Map<String, String> links;
   final bool hoverable;
   final double? width;
   final double? height;
@@ -34,7 +37,9 @@ class ProjectImage extends StatelessWidget {
       decoration: _buildDecoration(),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15),
-        child: LinksSlider(),
+        child: LinksSlider(
+          links: links,
+        ),
       ),
     );
   }
@@ -46,9 +51,7 @@ class ProjectImage extends StatelessWidget {
       decoration: _buildDecoration(),
       child: Align(
         alignment: Alignment.topRight,
-        child: LinkButton.icon(
-          imagePath: 'assets/images/png/github.png',
-        ),
+        child: ProjectsLinksRow(links: links),
       ),
     );
   }

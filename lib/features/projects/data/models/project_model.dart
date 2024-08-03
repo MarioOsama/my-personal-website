@@ -3,13 +3,13 @@ class ProjectModel {
   final String imageUrl;
   final String description;
   final List<String> tools;
-  final String githubUrl;
+  final Map<String, String> links;
 
   const ProjectModel({
     required this.title,
     required this.imageUrl,
     required this.description,
     required this.tools,
-    required this.githubUrl,
+    required this.links,
   });
 }

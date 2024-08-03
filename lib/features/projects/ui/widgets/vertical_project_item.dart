@@ -44,6 +44,7 @@ class VerticalProjectItem extends StatelessWidget {
   ProjectImage _buildAlignedImage(BuildContext context) {
     return ProjectImage(
       imageUrl: project.imageUrl,
+      links: project.links,
       hoverable: hoverable,
       width: 700,
       height: _getImageHeight(context),
