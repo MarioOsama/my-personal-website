@@ -2,37 +2,35 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:mario_osama/core/theming/app_colors.dart';
 import 'package:mario_osama/core/theming/app_text_styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LinkButton extends StatelessWidget {
   const LinkButton({
     super.key,
     required this.title,
     required this.imagePath,
-    this.onPressed,
+    required this.link,
   });
 
   factory LinkButton.icon({
     required String imagePath,
-    VoidCallback? onPressed,
+    required String link,
   }) {
     return LinkButton(
-      imagePath: imagePath,
       title: null,
+      imagePath: imagePath,
+      link: link,
     );
   }
 
   final String imagePath;
   final String? title;
-  final void Function()? onPressed;
+  final String link;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        if (onPressed != null) {
-          onPressed!();
-        }
-      },
+      onPressed: _onLinkPressed,
       style: _buildButtonStyle(),
       child: title != null ? _buildButton(context) : _buildIconButton(),
     );
@@ -82,5 +80,14 @@ class LinkButton extends StatelessWidget {
         },
       ),
     );
+  }
+
+  void _onLinkPressed() async {
+    final Uri targetedUrl = Uri.parse(link);
+    if (await canLaunchUrl(targetedUrl)) {
+      await launchUrl(targetedUrl);
+    } else {
+      throw Exception('Could not launch $targetedUrl');
+    }
   }
 }

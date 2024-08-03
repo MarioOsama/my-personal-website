@@ -67,6 +67,7 @@ class HorizontalProjectItem extends StatelessWidget {
       alignment: reversed ? Alignment.centerRight : Alignment.centerLeft,
       child: ProjectImage(
         imageUrl: project.imageUrl,
+        links: project.links,
         hoverable: hoverable,
       ),
     );

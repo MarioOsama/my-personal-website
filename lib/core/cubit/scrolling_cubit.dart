@@ -1,17 +1,8 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:mario_osama/core/utils/size_config.dart';
 
 class ScrollingCubit extends Cubit<ScrollController> {
   ScrollingCubit() : super(ScrollController());
-
-  void setupListener() {
-    state.addListener(() {
-      log('ScrollingCubit: ${state.offset}');
-    });
-  }
 
   void scrollToTargetedSection(BuildContext context, String title) {
     final double width = MediaQuery.of(context).size.width;
@@ -44,7 +35,7 @@ class ScrollingCubit extends Cubit<ScrollController> {
 
   void scrollToBrief(width) {
     state.animateTo(
-      width < SizeConfig.tablet ? 740 : 710,
+      width < 800 ? 740 : 885,
       duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );
@@ -52,7 +43,7 @@ class ScrollingCubit extends Cubit<ScrollController> {
 
   void scrollToProjects(width) {
     state.animateTo(
-      width < SizeConfig.tablet ? 1750 : 1500,
+      width < 800 ? 1750 : 1675,
       duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );
@@ -60,7 +51,7 @@ class ScrollingCubit extends Cubit<ScrollController> {
 
   void scrollToContact(width) {
     state.animateTo(
-      width < SizeConfig.tablet ? 5130 : 4870,
+      width < 800 ? 5130 : 4870,
       duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );

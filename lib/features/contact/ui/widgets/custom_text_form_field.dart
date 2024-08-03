@@ -7,15 +7,25 @@ class CustomTextFormField extends StatelessWidget {
     super.key,
     required this.title,
     this.maxLines = 1,
+    required this.controller,
+    this.minLines,
+    this.validator,
   });
   final String title;
   final int? maxLines;
+  final int? minLines;
+  final String? Function(String?)? validator;
+
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator ?? _validate,
       decoration: _buildInputDecoration(context),
       maxLines: maxLines,
+      controller: controller,
+      minLines: minLines,
     );
   }
 
@@ -38,5 +48,12 @@ class CustomTextFormField extends StatelessWidget {
     return OutlineInputBorder(
       borderSide: BorderSide(color: AppColors.blackColor.withOpacity(0.1)),
     );
+  }
+
+  String? _validate(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your $title';
+    }
+    return null;
   }
 }
