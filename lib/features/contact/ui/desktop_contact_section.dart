@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:mario_osama/core/widgets/section_header.dart';
 import 'package:mario_osama/features/contact/ui/contact_section_container.dart';
@@ -10,8 +12,15 @@ class DesktopContactSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.sizeOf(context).width;
+    String? bgImagePath = 'assets/images/png/bg.png';
+
+    if (window.navigator.userAgent.contains('Mobile') ||
+        window.navigator.userAgent.contains('Tablet')) {
+      bgImagePath = null;
+    }
     return ContactSectionContainer(
       paddingValue: screenWidth < 1400 ? 50 : 100,
+      backgroundImagePath: bgImagePath,
       child: const Column(
         children: [
           SectionHeader(sectionTitle: 'Contact Me'),

@@ -5,21 +5,21 @@ import 'package:mario_osama/core/widgets/section_header.dart';
 import 'package:mario_osama/features/brief/ui/widgets/about_text.dart';
 import 'package:mario_osama/features/brief/ui/widgets/tablet_skills_container.dart';
 
-class TabletBriefSection extends StatelessWidget {
-  const TabletBriefSection({super.key});
+class MobileBriefSection extends StatelessWidget {
+  const MobileBriefSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       decoration: _buildDecoration(),
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
+      padding: const EdgeInsets.symmetric(vertical: 40),
       child: Column(
         children: [
           const SectionHeader(sectionTitle: 'About Me'),
           const SizedBox(height: 20),
           SizedBox(
-            width: MediaQuery.sizeOf(context).width * 0.75,
+            width: MediaQuery.sizeOf(context).width * 0.85,
             child: const AboutText(),
           ),
           const SizedBox(height: 60),

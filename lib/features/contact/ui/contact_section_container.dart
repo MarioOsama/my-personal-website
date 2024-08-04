@@ -3,10 +3,14 @@ import 'package:mario_osama/core/theming/app_colors.dart';
 
 class ContactSectionContainer extends StatelessWidget {
   const ContactSectionContainer(
-      {super.key, required this.child, required this.paddingValue});
+      {super.key,
+      required this.child,
+      required this.paddingValue,
+      this.backgroundImagePath});
 
   final Widget child;
   final double paddingValue;
+  final String? backgroundImagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +23,8 @@ class ContactSectionContainer extends StatelessWidget {
   }
 
   DecorationImage _buildDecorationImage() {
-    return const DecorationImage(
-      image: AssetImage('assets/images/png/bg.png'),
+    return DecorationImage(
+      image: AssetImage(backgroundImagePath!),
       fit: BoxFit.cover,
       opacity: 0.05,
     );
@@ -28,8 +32,11 @@ class ContactSectionContainer extends StatelessWidget {
 
   BoxDecoration _buildDecoration() {
     return BoxDecoration(
-      image: _buildDecorationImage(),
-      gradient: _setGradient(),
+      image: backgroundImagePath != null ? _buildDecorationImage() : null,
+      gradient: backgroundImagePath != null ? _setGradient() : null,
+      color: backgroundImagePath == null
+          ? AppColors.greyColor.withOpacity(0.1)
+          : null,
     );
   }
 

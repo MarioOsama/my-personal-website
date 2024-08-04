@@ -3,5 +3,5 @@ abstract class SizeConfig {
   static const double tablet = 700;
 
   static const double mobileMenuItemsBreakpoint = 800;
-  static const double tabletProjectsSectionBreakpoint = 1024;
+  static const double verticalProjectsBreakpoint = 1000;
 }

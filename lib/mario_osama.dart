@@ -22,13 +22,16 @@ class MarioOsama extends StatelessWidget {
       home: Scaffold(
         backgroundColor: AppColors.whiteColor,
         appBar: const CustomAppBar(),
-        body: SingleChildScrollView(
+        body: ListView(
           controller: context.read<ScrollingCubit>().state,
-          child: AdaptiveLayout(
-            desktopLayout: (context) => const DesktopLayout(),
-            tabletLayout: (context) => const TabletLayout(),
-            mobileLayout: (context) => const MobileLayout(),
-          ),
+          // Scroll behavior for web apps
+          children: [
+            AdaptiveLayout(
+              desktopLayout: (context) => const DesktopLayout(),
+              tabletLayout: (context) => const TabletLayout(),
+              mobileLayout: (context) => const MobileLayout(),
+            ),
+          ],
         ),
       ),
     );

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/core/helpers/projects_alignment_enum.dart';
-import 'package:mario_osama/core/utils/size_config.dart';
 import 'package:mario_osama/features/projects/data/models/project_model.dart';
 import 'package:mario_osama/features/projects/ui/widgets/project_details.dart';
 import 'package:mario_osama/features/projects/ui/widgets/project_image.dart';
@@ -53,8 +52,9 @@ class VerticalProjectItem extends StatelessWidget {
 
   double _getImageHeight(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
-    return width < SizeConfig.tablet
-        ? MediaQuery.sizeOf(context).width * 0.5
-        : MediaQuery.sizeOf(context).width * 0.45;
+    if (width < 500) {
+      return MediaQuery.sizeOf(context).width * 0.6;
+    }
+    return MediaQuery.sizeOf(context).width * 0.45;
   }
 }

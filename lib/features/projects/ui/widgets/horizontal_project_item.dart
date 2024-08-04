@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mario_osama/core/helpers/projects_alignment_enum.dart';
+import 'package:mario_osama/core/utils/size_config.dart';
 import 'package:mario_osama/features/projects/data/models/project_model.dart';
 import 'package:mario_osama/features/projects/ui/widgets/project_details.dart';
 import 'package:mario_osama/features/projects/ui/widgets/project_image.dart';
@@ -20,14 +21,16 @@ class HorizontalProjectItem extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: reversed ? _buildReversedProjectItem : _buildProjectItem,
+      children: reversed
+          ? _buildReversedProjectItem(context)
+          : _buildProjectItem(context),
     );
   }
 
-  List<Widget> get _buildProjectItem {
+  List<Widget> _buildProjectItem(BuildContext context) {
     return [
       Expanded(
-        child: _buildAlignedImage(),
+        child: _buildAlignedImage(context),
       ),
       const SizedBox(width: 80),
       Expanded(
@@ -37,14 +40,14 @@ class HorizontalProjectItem extends StatelessWidget {
     ];
   }
 
-  List<Widget> get _buildReversedProjectItem {
+  List<Widget> _buildReversedProjectItem(BuildContext context) {
     return [
       Expanded(
         child: _buildDetails(),
       ),
       const SizedBox(width: 80),
       Expanded(
-        child: _buildAlignedImage(),
+        child: _buildAlignedImage(context),
       ),
       const SizedBox(width: 40),
     ];
@@ -62,14 +65,26 @@ class HorizontalProjectItem extends StatelessWidget {
     );
   }
 
-  Align _buildAlignedImage() {
+  Align _buildAlignedImage(BuildContext context) {
     return Align(
       alignment: reversed ? Alignment.centerRight : Alignment.centerLeft,
       child: ProjectImage(
         imageUrl: project.imageUrl,
         links: project.links,
         hoverable: hoverable,
+        height: _getImageHeight(context),
       ),
     );
+  }
+
+  _getImageHeight(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
+    if (width > 1800) {
+      return 500;
+    }
+    if (width < SizeConfig.desktop) {
+      return MediaQuery.sizeOf(context).width * 0.3;
+    }
+    return MediaQuery.sizeOf(context).width * 0.25;
   }
 }
