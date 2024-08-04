@@ -6,8 +6,8 @@ import 'package:mario_osama/features/contact/ui/widgets/contact_form_container.d
 import 'package:mario_osama/features/contact/ui/widgets/contacts_column.dart';
 import 'package:mario_osama/features/contact/ui/widgets/contacts_row.dart';
 
-class ContactSection extends StatelessWidget {
-  const ContactSection({super.key});
+class TabletContactSection extends StatelessWidget {
+  const TabletContactSection({super.key});
 
   @override
   Widget build(BuildContext context) {

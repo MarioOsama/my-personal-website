@@ -10,7 +10,7 @@ class SkillsContainer extends StatelessWidget {
     return const Column(
       children: [
         SectionHeader(sectionTitle: 'Skills'),
-        SizedBox(height: 40),
+        SizedBox(height: 10),
         SkillsWrap(),
       ],
     );

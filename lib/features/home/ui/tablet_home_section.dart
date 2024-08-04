@@ -14,8 +14,8 @@ class TabletHomeSection extends StatelessWidget {
       children: [
         SizedBox(height: height * 0.25),
         const MainBrief(),
-        const SizedBox(height: 60),
-        const MainSocialActionsRow(),
+        const SizedBox(height: 80),
+        const MainSocialActionsWrap(),
         const SizedBox(height: 60),
         const ScrollAnimation(),
       ],

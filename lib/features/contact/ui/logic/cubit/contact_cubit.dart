@@ -29,6 +29,10 @@ class ContactCubit extends Cubit<ContactState> {
   }
 
   Future<void> sendEmail() async {
+    nameController.clear();
+    emailController.clear();
+    messageController.clear();
+
     // final Uri emailUri = Uri(
     //   scheme: 'mailto',
     //   path: AppConstant.myEmail,

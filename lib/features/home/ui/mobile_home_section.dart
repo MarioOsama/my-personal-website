@@ -10,16 +10,18 @@ class MobileHomeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    final double height = MediaQuery.of(context).size.height;
+
+    return Column(
       children: [
-        SizedBox(height: 80),
-        MainBrief(
+        SizedBox(height: height * 0.15),
+        const MainBrief(
           padding: EdgeInsets.symmetric(horizontal: 40),
         ),
-        SizedBox(height: 60),
-        MainSocialActionsRow(),
-        SizedBox(height: 60),
-        ScrollAnimation(),
+        const SizedBox(height: 60),
+        const MainSocialActionsWrap(),
+        const SizedBox(height: 60),
+        const ScrollAnimation(),
       ],
     );
   }

@@ -64,7 +64,7 @@ class LinkButton extends StatelessWidget {
       padding: WidgetStateProperty.all(
         title != null
             ? const EdgeInsets.all(20)
-            : const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+            : const EdgeInsets.symmetric(vertical: 12),
       ),
       shape: WidgetStateProperty.all(
         RoundedRectangleBorder(
